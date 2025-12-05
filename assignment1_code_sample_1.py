@@ -12,12 +12,15 @@ db_config = {
 }
 
 # The input is not validated and could be used for code injection if user_input was used somewhere else.
-# I'd say this vulnerability would apply to A04 Insecure Design in the OWASP top 10.
+# I'd say this vulnerability would apply to A03 Injection in the OWASP top 10.
 # they can prevent this by adding validations to the code.
 def get_user_input():
     user_input = input('Enter your name: ')
     return user_input
 
+# i think this is also an injection vulnerability. os.system() passes the text into the system shell.
+# this also has no validation which would make it really easy to run shell commands with this code.
+# I'd say this vulnerability would apply to A03 Injection in the OWASP top 10.
 def send_email(to, subject, body):
     os.system(f'echo {body} | mail -s "{subject}" {to}')
 
