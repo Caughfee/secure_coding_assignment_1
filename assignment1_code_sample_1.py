@@ -31,6 +31,9 @@ def get_data():
     data = urlopen(url).read().decode()
     return data
 
+# the vulnerability for this block of code is another injection vulnerability.
+#this would be another A03 Injection vulnerability from the OWASP top 10.
+# Whatever is in data can be used for SQL Injections. One way to prevent this is by using parameterized queries.
 def save_to_db(data):
     query = f"INSERT INTO mytable (column1, column2) VALUES ('{data}', 'Another Value')"
     connection = pymysql.connect(**db_config)
