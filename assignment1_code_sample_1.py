@@ -43,6 +43,7 @@ def save_to_db(data):
     cursor.close()
     connection.close()
 
+# only calls the previous functions so I don't think this would be considered a vulnerability itself.
 if __name__ == '__main__':
     user_input = get_user_input()
     data = get_data()
