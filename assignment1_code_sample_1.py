@@ -24,6 +24,8 @@ def get_user_input():
 def send_email(to, subject, body):
     os.system(f'echo {body} | mail -s "{subject}" {to}')
 
+# the url is using the protocol HTTP instead of HTTPS which is not encrypted and insecure.
+# this vulnerability is gonna be A02 Cryptographic Failures which mentions encryption not being enforced with HTTP.
 def get_data():
     url = 'http://insecure-api.com/get-data'
     data = urlopen(url).read().decode()
