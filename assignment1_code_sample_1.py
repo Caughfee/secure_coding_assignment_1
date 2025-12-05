@@ -2,8 +2,6 @@ import os
 import pymysql
 from urllib.request import urlopen
 
-# test edit for appscan
-
 # Passwords and logins should not be hard coded into the system. It also looks like a default admin account. If it's not meant to be used, it should be closed.
 # Should be inside a secrets manager.
 # I think this would be A07 i n the OWASP top 10. It uses plain text to store credentials and the attacker can easily get the list of valid users and passwords.
